@@ -62,8 +62,6 @@ let colorgroup['Conditional']  = {"GUIFG": _fire}
 let colorgroup['Constant']     = {"GUIFG": _aqua}
 let colorgroup['Define']       = {"GUIFG": _aqua}
 let colorgroup['Delimiter']    = {"GUIFG": _dawn}
-let colorgroup['DiffDelete']   = {"GUIFG": _fire}
-let colorgroup['DiffChange']   = {"GUIFG": _dawn}
 let colorgroup['ErrorMsg']     = {"GUIFG": _fire}
 let colorgroup['Function']     = {"GUIFG": _clay}
 let colorgroup['Identifier']   = {"GUIFG": _aqua}
@@ -71,8 +69,8 @@ let colorgroup['NonText']      = {"GUIFG": _tar}
 let colorgroup['Number']       = {"GUIFG": _aqua}
 let colorgroup['Operator']     = {"GUIFG": _clay}
 let colorgroup['PreProc']      = {"GUIFG": _fire}
-let colorgroup['VertSplit']    = {"GUIFG": _rock,     "GUIBG": _rock}
-let colorgroup['SpecialKey']   = {"GUIFG": _rock,     "GUIBG": _tar}
+let colorgroup['VertSplit']    = {"GUIFG": _carbon,    "GUIBG": _carbon}
+let colorgroup['SpecialKey']   = {"GUIFG": _rock,      "GUIBG": _tar}
 let colorgroup['Statement']    = {"GUIFG": _grass}
 let colorgroup['StorageClass'] = {"GUIFG": _ice,                           "GUI": "bold"}
 let colorgroup['Title']        = {"GUIFG": _grass,                         "GUI": "bold"}
@@ -80,6 +78,7 @@ let colorgroup['Todo']         = {"GUIFG": _rock,                          "GUI"
 let colorgroup['Type']         = {"GUIFG": _moss}
 let colorgroup['Underlined']   = {                                         "GUI": "underline"}
 hi link         DiffAdd                           Statement
+hi link         DiffChange                        Delimiter
 hi link         DiffDelete                        ErrorMsg
 hi link         DiffText                          Boolean
 hi link         Float                             Number
@@ -96,27 +95,32 @@ hi link         WarningMsg                        ErrorMsg
 " CSS
 hi link         cssURL                            Character
 hi link         cssColor                          Boolean
-hi link         cssBraces                         Conditional
-hi link         cssClassName                      Boolean
+hi link         cssBraces                         Delimiter
+hi link         cssClassName                      Function
 hi link         cssCommonAttr                     Boolean
 hi link         cssFunctionName                   Character
 hi link         cssPseudoClassId                  Character
+hi link         cssTagName                        Constant
 hi link         cssValueLength                    Float
+
+" Sass
+hi link         sassClass                         Function
+hi link         sassClassChar                     Function
 
 " CtrlP
 hi link         CtrlPMatch                        Boolean
 
 " GitGutter
 hi link         GitGutterAdd                      Statement
-hi link         GitGutterChange                   Special
-hi link         GitGutterDelete                   Identifier
+hi link         GitGutterChange                   Boolean
+hi link         GitGutterDelete                   Character
 hi link         GitGutterChangeDelete             Constant
 
 " HTML
 hi link         htmlTag                           Constant
 hi link         htmlEndTag                        Constant
 hi link         htmlTagName                       Constant
-hi link         htmlArg                           Identifier
+hi link         htmlArg                           Function
 hi link         htmlSpecialChar                   Boolean
 
 " JavaScript
@@ -124,14 +128,20 @@ hi link         javaScriptFunction                Float
 hi link         javaScriptRailsFunction           Character
 hi link         javaScriptBraces                  Conditional
 
+" Liquid
+hi link         liquidDelimiter                   Delimiter
+
 " NERDtree
-hi link         NerdTreeCWD                       Statement
-hi link         NerdTreeOpenable                  Statement
-hi link         NerdTreeClosable                  Statement
-hi link         NerdTreeDir                       Statement
-hi link         NerdTreeDirSlash                  Statement
+hi link         NerdTreeClosable                  Boolean
+hi link         NerdTreeCWD                       Boolean
+hi link         NerdTreeDir                       Boolean
+hi link         NerdTreeDirSlash                  Boolean
+hi link         NerdTreeHelp                      Identifier
+hi link         NerdTreeOpenable                  Boolean
+hi link         NerdTreeUp                        Type
 
 " Ruby
+hi link         rubyAccess                        Statement
 hi link         rubyClass                         Define
 hi link         rubyInterpolationDelimiter        Constant
 hi link         rubySymbol                        Boolean
@@ -143,7 +153,7 @@ hi link         rubyGlobalVariable                Character
 hi link         rubyRegexp                        Special
 hi link         rubyRegexpDelimiter               Boolean
 hi link         rubyEscape                        Conditional
-hi link         rubyControl                       Conditional
+hi link         rubyControl                       Define
 hi link         rubyClassVariable                 Character
 hi link         rubyOperator                      Operator
 hi link         rubyException                     Conditional
