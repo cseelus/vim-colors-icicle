@@ -1,7 +1,6 @@
 " Vim color scheme ICICLE
 " ----------------------------------------------------------------------
 " Created by Chris Seelus (@cseelus)
-" Colors from Salmon on ice (https://kuler.adobe.com/#themeID/2291686)
 
 
 :let _pitch     = '#151618'
@@ -13,8 +12,8 @@
 " ------------------------
 :let _aqua      = '#2185c5'
 :let _glacier   = '#7ecefd'
-:let _turquoise = '#24b279'
-:let _moss      = '#6cec41'
+:let _moss      = '#24b279'
+:let _grass     = '#6cec41'
 :let _fire      = '#e85451'
 :let _orange    = '#ff7f66'
 :let _dawn      = '#fdc77e'
@@ -59,7 +58,7 @@ let colorgroup['VertSplit']    = {"GUIFG": _rock,      "GUIBG": _rock}
 let colorgroup['Boolean']      = {"GUIFG": _glacier}
 let colorgroup['Character']    = {"GUIFG": _orange}
 let colorgroup['Comment']      = {"GUIFG": _rock,                          "GUI": "italic"}
-let colorgroup['Conditional']  = {"GUIFG": _ice}
+let colorgroup['Conditional']  = {"GUIFG": _fire}
 let colorgroup['Constant']     = {"GUIFG": _aqua}
 let colorgroup['Define']       = {"GUIFG": _aqua}
 let colorgroup['Delimiter']    = {"GUIFG": _dawn}
@@ -69,91 +68,99 @@ let colorgroup['ErrorMsg']     = {"GUIFG": _fire}
 let colorgroup['Function']     = {"GUIFG": _clay}
 let colorgroup['Identifier']   = {"GUIFG": _aqua}
 let colorgroup['NonText']      = {"GUIFG": _tar}
+let colorgroup['Number']       = {"GUIFG": _aqua}
 let colorgroup['Operator']     = {"GUIFG": _clay}
 let colorgroup['PreProc']      = {"GUIFG": _fire}
 let colorgroup['VertSplit']    = {"GUIFG": _rock,     "GUIBG": _rock}
 let colorgroup['SpecialKey']   = {"GUIFG": _rock,     "GUIBG": _tar}
-let colorgroup['Statement']    = {"GUIFG": _turquoise}
-let colorgroup['StorageClass'] = {"GUIFG": _ice,                "GUI": "bold"}
-let colorgroup['Title']        = {"GUIFG": _ice,                           "GUI": "bold"}
+let colorgroup['Statement']    = {"GUIFG": _grass}
+let colorgroup['StorageClass'] = {"GUIFG": _ice,                           "GUI": "bold"}
+let colorgroup['Title']        = {"GUIFG": _grass,                         "GUI": "bold"}
 let colorgroup['Todo']         = {"GUIFG": _rock,                          "GUI": "bold"}
 let colorgroup['Type']         = {"GUIFG": _moss}
 let colorgroup['Underlined']   = {                                         "GUI": "underline"}
-hi link         DiffAdd Statement
-hi link         DiffDelete ErrorMsg
-hi link         DiffText Boolean
-hi link         Float Constant
-hi link         Keyword Conditional
-hi link         Label Boolean
-hi link         Number Float
-hi link         Special Conditional
-hi link         Repeat Statement
-hi link         String Label
-hi link         Tag Float
-hi link         WarningMsg ErrorMsg
+hi link         DiffAdd                           Statement
+hi link         DiffDelete                        ErrorMsg
+hi link         DiffText                          Boolean
+hi link         Float                             Number
+hi link         Keyword                           Conditional
+hi link         Label                             Boolean
+hi link         Number                            Float
+hi link         Special                           Conditional
+hi link         Repeat                            Statement
+hi link         String                            Label
+hi link         Tag                               Float
+hi link         WarningMsg                        ErrorMsg
 
 
 " CSS
-hi link         cssURL Character
-hi link         cssColor Boolean
-hi link         cssBraces Conditional
-hi link         cssClassName Boolean
-hi link         cssCommonAttr Boolean
-hi link         cssFunctionName Character
-hi link         cssPseudoClassId Character
-hi link         cssValueLength Float
+hi link         cssURL                            Character
+hi link         cssColor                          Boolean
+hi link         cssBraces                         Conditional
+hi link         cssClassName                      Boolean
+hi link         cssCommonAttr                     Boolean
+hi link         cssFunctionName                   Character
+hi link         cssPseudoClassId                  Character
+hi link         cssValueLength                    Float
 
 " CtrlP
-hi link         CtrlPMatch Boolean
+hi link         CtrlPMatch                        Boolean
 
 " GitGutter
-hi link         GitGutterAdd Statement
-hi link         GitGutterChange Special
-hi link         GitGutterDelete Identifier
-hi link         GitGutterChangeDelete Constant
+hi link         GitGutterAdd                      Statement
+hi link         GitGutterChange                   Special
+hi link         GitGutterDelete                   Identifier
+hi link         GitGutterChangeDelete             Constant
 
 " HTML
-hi link         htmlTag Constant
-hi link         htmlEndTag Constant
-hi link         htmlTagName Constant
-hi link         htmlArg Identifier
-hi link         htmlSpecialChar Boolean
+hi link         htmlTag                           Constant
+hi link         htmlEndTag                        Constant
+hi link         htmlTagName                       Constant
+hi link         htmlArg                           Identifier
+hi link         htmlSpecialChar                   Boolean
 
 " JavaScript
-hi link         javaScriptFunction Float
-hi link         javaScriptRailsFunction Character
-hi link         javaScriptBraces Conditional
+hi link         javaScriptFunction                Float
+hi link         javaScriptRailsFunction           Character
+hi link         javaScriptBraces                  Conditional
 
 " NERDtree
-hi link         NerdTreeCWD Statement
-hi link         NerdTreeOpenable Statement
-hi link         NerdTreeClosable Statement
-hi link         NerdTreeDir Statement
-hi link         NerdTreeDirSlash Statement
+hi link         NerdTreeCWD                       Statement
+hi link         NerdTreeOpenable                  Statement
+hi link         NerdTreeClosable                  Statement
+hi link         NerdTreeDir                       Statement
+hi link         NerdTreeDirSlash                  Statement
 
 " Ruby
-hi link         rubyClass Define
-hi link         rubyInterpolationDelimiter Constant
-hi link         rubySymbol Boolean
-hi link         rubyConstant Conditional
-hi link         rubyStringDelimiter Label
-hi link         rubyBlockParameter Charakter
-hi link         rubyInstanceVariable Character
-hi link         rubyInclude Conditional
-hi link         rubyGlobalVariable Character
-hi link         rubyRegexp Special
-hi link         rubyRegexpDelimiter Boolean
-hi link         rubyEscape Conditional
-hi link         rubyControl Conditional
-hi link         rubyClassVariable Character
-hi link         rubyOperator Operator
-hi link         rubyException Conditional
-hi link         rubyPseudoVariable Character
-hi link         rubyRailsUserClass Conditional
-hi link         rubyRailsARAssociationMethod Character
-hi link         rubyRailsARMethod Character
-hi link         rubyRailsRenderMethod Character
-hi link         rubyRailsMethod Character
+hi link         rubyClass                         Define
+hi link         rubyInterpolationDelimiter        Constant
+hi link         rubySymbol                        Boolean
+hi link         rubyStringDelimiter               Label
+hi link         rubyBlockParameter                Character
+hi link         rubyInstanceVariable              Type
+hi link         rubyInclude                       Conditional
+hi link         rubyGlobalVariable                Character
+hi link         rubyRegexp                        Special
+hi link         rubyRegexpDelimiter               Boolean
+hi link         rubyEscape                        Conditional
+hi link         rubyControl                       Conditional
+hi link         rubyClassVariable                 Character
+hi link         rubyOperator                      Operator
+hi link         rubyException                     Conditional
+hi link         rubyPseudoVariable                Character
+hi link         rubyRailsUserClass                Conditional
+hi link         rubyRailsARAssociationMethod      Character
+hi link         rubyRailsARMethod                 Character
+hi link         rubyRailsRenderMethod             Character
+hi link         rubyRailsMethod                   Character
+
+" Startify
+hi link         StartifyNumber                    Boolean
+hi link         StartifyBracket                   Boolean
+hi link         StartifySection                   Title
+hi link         StartifyPath                      Operator
+hi link         StartifySlash                     Operator
+hi link         StartifyFile                      StorageClass
 
 " YAML
 hi link         yamlKey Float
