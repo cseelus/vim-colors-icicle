@@ -43,6 +43,7 @@ let colorgroup['Folded']       = {"GUIFG": _rock,      "GUIBG": _pitch}
 let colorgroup['IncSearch']    = {"GUIFG": _pitch,     "GUIBG": _glacier}
 let colorgroup['LineNr']       = {"GUIFG": _rock,      "GUIBG": _pitch}
 let colorgroup['MatchParen']   = {"GUIFG": _fire,                          "GUI": "underline"}
+let colorgroup['ModeMsg']      = {"GUIFG": _pitch,     "GUIBG": _glacier}
 let colorgroup['Pmenu']        = {"GUIFG": _ice,       "GUIBG": _tar}
 let colorgroup['PmenuSel']     = {                     "GUIBG": _rock}
 let colorgroup['SignColumn']   = {                     "GUIBG": _pitch}
@@ -74,9 +75,9 @@ let colorgroup['SpecialKey']   = {"GUIFG": _rock,      "GUIBG": _tar}
 let colorgroup['Statement']    = {"GUIFG": _grass}
 let colorgroup['StorageClass'] = {"GUIFG": _ice,                           "GUI": "bold"}
 let colorgroup['Title']        = {"GUIFG": _grass,                         "GUI": "bold"}
-let colorgroup['Todo']         = {"GUIFG": _rock,                          "GUI": "bold"}
+let colorgroup['Todo']         = {"GUIFG": _sun}
 let colorgroup['Type']         = {"GUIFG": _moss}
-let colorgroup['Underlined']   = {                                         "GUI": "underline"}
+let colorgroup['Underlined']   = {"GUIFG": _glacier,                       "GUI": "underline"}
 hi link         DiffAdd                           Statement
 hi link         DiffChange                        Delimiter
 hi link         DiffDelete                        ErrorMsg
@@ -123,13 +124,22 @@ hi link         htmlTagName                       Constant
 hi link         htmlArg                           Function
 hi link         htmlSpecialChar                   Boolean
 
+" Jade
+hi link         jadeTag                           Boolean
+
 " JavaScript
 hi link         javaScriptFunction                Float
 hi link         javaScriptRailsFunction           Character
-hi link         javaScriptBraces                  Conditional
+hi link         javaScriptBraces                  Delimiter
 
 " Liquid
 hi link         liquidDelimiter                   Delimiter
+
+" Mustache
+hi link         mustacheHandlebars                Delimiter
+hi link         mustacheHelpers                   Character
+hi link         mustachePartial                   Boolean
+hi link         mustacheSection                   Boolean
 
 " NERDtree
 hi link         NerdTreeClosable                  Boolean
@@ -163,6 +173,13 @@ hi link         rubyRailsARAssociationMethod      Character
 hi link         rubyRailsARMethod                 Character
 hi link         rubyRailsRenderMethod             Character
 hi link         rubyRailsMethod                   Character
+
+" Spacebars
+hi link         spacebarsInside                   Normal
+hi link         spacebarsHandlebars               Delimiter
+hi link         spacebarsHelpers                  Character
+hi link         spacebarsPartial                  Boolean
+hi link         spacebarsSection                  Boolean
 
 " Startify
 hi link         StartifyNumber                    Boolean
